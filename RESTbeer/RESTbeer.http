@@ -1,0 +1,6 @@
+@RESTbeer_HostAddress = http://localhost:5273
+
+GET {{RESTbeer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
