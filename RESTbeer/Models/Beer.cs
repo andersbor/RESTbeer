@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string? User { get; set; }
+        public string? Brewery { get; set; }
         public string? Name { get; set; }
         public string? Style { get; set; }
         public double Abv { get; set; }

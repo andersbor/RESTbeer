@@ -8,18 +8,20 @@
         public BeersRepository()
         {
             beers = [
-                new() { Id=nextId++, Name="Tuborg Grøn", Style="Pilsner", Abv=4.6, User="anbo@zealand.dk", Volume=33, HowMany=1, PictureUrl="https://frugt.dk/img/p/2/4/0/2/6/24026.jpg" },
-                new() { Id=nextId++, Name="Tuborg Classic", Style="Vienna lager", Abv=4.6, User="anbo@zealand.dk", Volume=33, HowMany=2},
-                new() { Id=nextId++, Name="Lervig Paragon (2019)", Style="Barley Wine", Abv=13.5, User="anbo@zealand.dk", Volume=37.5, HowMany=1},
-                new() { Id=nextId++, Name="Det Lille Bryggeri Big Mash Up - Barrel Aged Johnny Walker Gold Edition", Style="Imperial Stout", Abv=16.2, User="anbo@zealand.dk", Volume=50, HowMany=1},
-                new() {Id=nextId++, Name="Nerdbrewing Indexoutofbounds Oak Aged Imperial Vanilla Stout", Style="Imperial Stout", Abv=11.6, User="anbo@zealand.dk", Volume=33},
-                new() {Id=nextId++, Name="Newbarns 404 Error", Style="IPA", Abv=6.5, Volume=44, User="somebody@home.com"},
-                new() {Id=nextId++, Name="Schwarze Rose Paranoid Android", Style="IPA", Abv=6.7, Volume=44, User="somebody@home.com", PictureUrl="https://www.alehub.de/wp-content/uploads/2021/03/schwarze-rose-paranoid-android-online-kaufen.jpg"},
-                new() {Id=nextId++, Name="Velka Morava Velka Morava", Style="baltic porter", Abv=8.5, Volume=50, User="somebody@home.com"}
-            ];
+                new() { Id = nextId++, Brewery = "Tuborg", Name = "Grøn", Style = "Pilsner", Abv = 4.6, User = "anbo@zealand.dk", Volume = 33, HowMany = 1, PictureUrl = "https://frugt.dk/img/p/2/4/0/2/6/24026.jpg" },
+                new() { Id = nextId++, Brewery = "Tuborg", Name = "Classic", Style = "Vienna lager", Abv = 4.6, User = "anbo@zealand.dk", Volume = 33, HowMany = 2 },
+                new() { Id = nextId++, Brewery = "Lervig", Name = "Paragon (2019)", Style = "Barley Wine", Abv = 13.5, User = "anbo@zealand.dk", Volume = 37.5, HowMany = 1 },
+                new() { Id = nextId++, Brewery = "Det Lille Bryggeri", Name = "Big Mash Up - Barrel Aged Johnny Walker Gold Edition", Style = "Imperial Stout", Abv = 16.2, User = "anbo@zealand.dk", Volume = 50, HowMany = 1 },
+                new() { Id = nextId++, Brewery = "Nerdbrewing", Name = "Indexoutofbounds Oak Aged Imperial Vanilla Stout", Style = "Imperial Stout", Abv = 11.6, User = "anbo@zealand.dk", Volume = 33 },
+                new() { Id = nextId++, Brewery = "Newbarns", Name = "404 Error", Style = "IPA", Abv = 6.5, Volume = 44, User = "somebody@home.com" },
+                new() { Id = nextId++, Brewery = "Schwarze Rose", Name = "Paranoid Android", Style = "IPA", Abv = 6.7, Volume = 44, User = "somebody@home.com", PictureUrl = "https://www.alehub.de/wp-content/uploads/2021/03/schwarze-rose-paranoid-android-online-kaufen.jpg" },
+                new() { Id = nextId++, Brewery = "Velka Morava", Name = "Kotlin", Style = "baltic porter", Abv = 8.5, Volume = 50, User = "somebody@home.com" },
+                new() { Id = nextId++, Brewery = "Binary Brewing", Name = "HTTPale", Style = "American Pale Ale", Abv = 6, User = "someboty@home.com", Volume = 35.5 },
+                new() { Id = nextId++, Brewery = "Burnt City", Name = "Retrofit Radler", Style = "Radler", Abv = 3.7, User = "somebody@home.com", Volume = 44 }
+                ];
         }
 
-        public IEnumerable<Beer> Get(string user)
+        public IEnumerable<Beer> Get(string? user = null)
         {
             if (user != null) // TODO null allowed?
                 return beers.Where(beer => beer.User == user);

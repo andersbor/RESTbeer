@@ -14,6 +14,17 @@ namespace RESTbeer.Controllers
             _beersRepository = beersRepository;
         }
 
+
+        // GET: api/<BeersController>
+        [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult<IEnumerable<Beer>> Get()
+        {
+            IEnumerable<Beer> beers = _beersRepository.Get();
+            return Ok(beers);
+        }
+
+
         // GET: api/<BeersController>
         [HttpGet("{user}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
