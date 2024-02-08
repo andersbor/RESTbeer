@@ -29,9 +29,9 @@ namespace RESTbeer.Controllers
         [HttpGet("{user}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<IEnumerable<Beer>> Get(string user)
+        public ActionResult<IEnumerable<Beer>> Get(string user, [FromQuery] string? orderBy=null)
         {
-            IEnumerable<Beer> beers = _beersRepository.Get(user);
+            IEnumerable<Beer> beers = _beersRepository.Get(user, orderBy);
             if (beers.Any())
                 return Ok(beers);
             return NotFound();
