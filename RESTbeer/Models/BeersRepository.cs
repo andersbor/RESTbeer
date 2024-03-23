@@ -72,11 +72,13 @@
             Beer? beerToUpdate = beers.FirstOrDefault(beer => beer.Id == id);
             if (beerToUpdate != null)
             {
+                beerToUpdate.Brewery = beer.Brewery;
                 beerToUpdate.Name = beer.Name;
                 beerToUpdate.Style = beer.Style;
                 beerToUpdate.Abv = beer.Abv;
                 beerToUpdate.Volume = beer.Volume;
                 beerToUpdate.HowMany = beer.HowMany;
+                beerToUpdate.PictureUrl = beer.PictureUrl;
             }
             return beerToUpdate;
         }
